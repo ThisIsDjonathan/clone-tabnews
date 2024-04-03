@@ -1,6 +1,7 @@
 import database from 'infra/database';
 
 async function status(request, response) {
+  console.log("testando")
   const updatedAt = new Date().toISOString();
 
   const dbVersionResult = await database.query("SHOW server_version;");
