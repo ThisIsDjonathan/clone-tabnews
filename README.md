@@ -1,14 +1,8 @@
 # clone-tabnews
 
-Implementação do https://www.tabnews.com.br para o https://curso.dev
+This is a [TabNews](https://www.tabnews.com.br) clone we are coding on [curso.dev](https://curso.dev)
 
-## Starting local env
-
-Start server: `npm run dev`
-
-Run migrations: `npm run migration:up`
-
-Stop services: `npm run services:stop`
+[Here](https://github.com/filipedeschamps/clone-tabnews) is the course official repo.
 
 ## Test
 
