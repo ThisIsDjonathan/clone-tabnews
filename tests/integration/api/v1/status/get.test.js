@@ -12,7 +12,9 @@ describe("GET /api/v1/status", () => {
 
       const responseBody = await response.json();
 
-      const isoFormatUpdatedAt = new Date(responseBody.updated_at).toISOString();
+      const isoFormatUpdatedAt = new Date(
+        responseBody.updated_at,
+      ).toISOString();
       expect(responseBody.updated_at).toEqual(isoFormatUpdatedAt);
 
       expect(responseBody.dependencies.database.version).toEqual("16.0");
