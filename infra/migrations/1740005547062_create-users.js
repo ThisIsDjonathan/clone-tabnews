@@ -1,6 +1,5 @@
-
 exports.up = (pgm) => {
-  pgm.createTable('users', {
+  pgm.createTable("users", {
     id: {
       type: "uuid",
       primaryKey: true,
@@ -18,20 +17,22 @@ exports.up = (pgm) => {
       notNull: true,
       unique: true,
     },
-    // For reference: bcrypt hash length is 72 characters
+    // For reference: bcrypt hash result length is 60 characters
     password: {
-      type: "varchar(72)",
+      type: "varchar(60)",
       notNull: true,
     },
     created_at: {
       type: "timestamptz",
-      default: pgm.func("now()"),
+      default: pgm.func("timezone('utc', now())"),
+      notNull: true,
     },
     updated_at: {
       type: "timestamptz",
-      default: pgm.func("now()"),
+      default: pgm.func("timezone('utc', now())"),
+      notNull: true,
     },
-  })
+  });
 };
 
 exports.down = false;
