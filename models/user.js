@@ -11,6 +11,21 @@ async function create(userInputValues) {
   return newUser;
 }
 
+async function update(username, userInputValues) {
+  const currentUser = await findOneByUserName(username);
+
+  if ("username" in userInputValues) {
+    if (currentUser.username.toLowerCase() !== userInputValues.username.toLowerCase()) {
+      await validateUniqueUsername(userInputValues.username);
+    }
+  }
+
+  if ("email" in userInputValues) {
+    await validateUniqueEmail(userInputValues.email);
+  }
+
+}
+
 async function hashPasswordInObject(userInputValues) {
   const hashedPassword = await password.hash(userInputValues.password);
   userInputValues.password = hashedPassword;
@@ -89,6 +104,7 @@ async function runSelectQuery(username) {
 
 const user = {
   create,
+  update,
   findOneByUserName,
 };
 
