@@ -1,5 +1,4 @@
-
-import bcryptjs from 'bcryptjs';
+import bcryptjs from "bcryptjs";
 
 async function hash(password) {
   const rounds = getNumberOfRounds();
@@ -9,7 +8,7 @@ async function hash(password) {
 function getNumberOfRounds() {
   let rounds = 1;
 
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === "production") {
     rounds = 14;
   }
 
