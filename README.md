@@ -4,6 +4,12 @@ This is a [TabNews](https://www.tabnews.com.br) clone we are coding on [curso.de
 
 [Here](https://github.com/filipedeschamps/clone-tabnews) is the course official repo.
 
+## Starting
+
+`npm install`
+
+`npm run dev`
+
 ## Test
 
 Run tests once: `npm run test`
